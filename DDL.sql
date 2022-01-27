@@ -1,4 +1,7 @@
+alter session set “_ORACLE_SCRIPT”=true;
+
 drop user ACME cascade;
+
 create user ACME identified by acme;
 grant create session to ACME;
 grant create table to ACME;
