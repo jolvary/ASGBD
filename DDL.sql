@@ -21,7 +21,7 @@ create table CLIENTES (
 
 create table VISITAS (
 	idVis number,
-	cliente varchar2(50),
+	cliente number,
 	ubi varchar2(50),
 	constraint pk_Vis primary key (idVis),
     constraint fk_Cli foreign key (cliente) references CLIENTES (idCli)
