@@ -1,3 +1,5 @@
+SET ECHO ON
+
 alter session set "_ORACLE_SCRIPT"=true;
 
 drop user ACME cascade;
