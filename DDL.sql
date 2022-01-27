@@ -3,6 +3,21 @@ SET ECHO ON
 alter session set "_ORACLE_SCRIPT"=true;
 
 drop user ACME cascade;
+drop role CEO cascade;
+drop role Jefatura_Tecnica cascade;
+drop role Jefatura_Comercial cascade;
+drop role ReInEm cascade;
+
+create role CEO;
+grant create session with admin option to CEO;
+grant create user, drop user to CEO;
+
+create role Jefatura_Tecnica;
+grant create session to Jefatura_Tecnica;
+grant create synonym, create view to Jefatura_Tecnica;
+
+create role Jefatura_Comercial;
+grant create session to Jefatura_Comercial;
 
 create user ACME identified by acme;
 grant create session to ACME;
