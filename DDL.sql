@@ -22,7 +22,7 @@ grant create synonym, create view to Jefatura_Tecnica;
 create role Jefatura_Comercial;
 grant create session to Jefatura_Comercial;
 
-create role Nuevo_Trabajador;
+create role ReInEm;
 grant create session;
 
 create user ACME identified by acme;
@@ -64,4 +64,4 @@ grant select on FuentesDeDinero with admin option to CEO;
 conn CEO1/ceo1
 
 create user TRA1 identified by tra1;
-grant role Nuevo_Trabajador to TRA1;
+grant role ReInEm to TRA1;
