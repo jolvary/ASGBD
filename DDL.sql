@@ -11,7 +11,8 @@ drop role Jefatura_Comercial cascade;
 drop role ReInEm cascade;
 
 create role CEO;
-grant create session with admin option to CEO;
+grant create session;
+grant any role to CEO;
 grant create user, drop user to CEO;
 
 create role Jefatura_Tecnica;
