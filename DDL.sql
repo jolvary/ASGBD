@@ -86,3 +86,5 @@ alter session set "_ORACLE_SCRIPT"=true;
 create user TRA1 identified by tra1;
 grant ReInEm to TRA1;
 grant select on MARRONES to TRA1;
+
+grant select on ACME.FuentesDeDinero to Jefatura_Comercial; 
