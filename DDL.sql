@@ -12,7 +12,7 @@ drop role ReInEm cascade;
 
 create role CEO;
 grant create session;
-grant any role to CEO;
+grant grant any role to CEO;
 grant create user, drop user to CEO;
 
 create role Jefatura_Tecnica;
@@ -54,8 +54,8 @@ create table VISITAS (
 
 create view SemillasPlantadas as select * from VISITAS;
 create view FuentesDeDinero as select * from CLIENTES;
-create view V_Visitas as (select nomUsu, numCli from VISITAS inner join CLIENTES on idCli = cliente;
-create synonym for as select * from V_Visitas;
+create view V_VISITAS as (select nomUsu, numCli from VISITAS inner join CLIENTES on idCli = cliente;
+create synonym MARRONES for V_Visitas;
 
 grant select on SemillasPlantadas with admin option to CEO;
 grant select on Clientes with admin option to CEO;
@@ -65,3 +65,7 @@ conn CEO1/ceo1
 
 create user TRA1 identified by tra1;
 grant role ReInEm to TRA1;
+grant select on MARRONES to TRA1;
+
+create user JComercial identified by jc1;
+grant role Jefatura_Comercial to JComercial;
