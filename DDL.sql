@@ -14,6 +14,7 @@ drop role ReInEm;
 
 drop table VISITAS cascade;
 drop table CLIENTES cascade;
+drop public synonym MARRONES cascade;
 
 create role CEO;
 grant create session to CEO;
@@ -22,6 +23,7 @@ grant create user, drop user to CEO;
 
 create role Jefatura_Tecnica;
 grant create session to Jefatura_Tecnica;
+grant unlimited tablespace to Jefatura_Tecnica;
 grant create table, create public synonym, create view to Jefatura_Tecnica;
 
 create role Jefatura_Comercial;
