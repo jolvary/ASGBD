@@ -51,7 +51,7 @@ alter session set "_ORACLE_SCRIPT"=true;
 create table CLIENTES (
 	idCli number,
 	nomCli varchar2(20),
-	dniCli number,
+	dniCli varchar2(9),
 	visita char(1) default 'N' not null,
 	constraint pk_Cli primary key (idCli),
 	constraint uq_Cli unique (dniCli),
