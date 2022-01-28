@@ -3,12 +3,12 @@ SET ECHO ON
 alter session set "_ORACLE_SCRIPT"=true;
 
 drop user ACME cascade;
-drop table Visitas cascade;
-drop table Clientes cascade;
-drop role CEO cascade;
-drop role Jefatura_Tecnica cascade;
-drop role Jefatura_Comercial cascade;
-drop role ReInEm cascade;
+drop table VISITAS cascade;
+drop table CLIENTES cascade;
+drop role CEO;
+drop role Jefatura_Tecnica;
+drop role Jefatura_Comercial;
+drop role ReInEm;
 
 create role CEO;
 grant create session;
