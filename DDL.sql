@@ -70,12 +70,12 @@ create table VISITAS (
 create view SemillasPlantadas as select * from VISITAS;
 create view FuentesDeDinero as select * from CLIENTES;
 create view V_VISITAS as (select nomCli, numCli from VISITAS inner join CLIENTES on idCli = cliente where visita = 'N');
-create synonym MARRONES for V_Visitas;
+create public synonym MARRONES for V_Visitas;
 
-grant select on SemillasPlantadas to CEO with grant option;
-grant select on Clientes to CEO with grant option;
-grant select on FuentesDeDinero to CEO with grant option;
-grant select on Marrones to CEO with grant option;
+grant select on SemillasPlantadas to CEO1 with grant option;
+grant select on Clientes to CEO1 with grant option;
+grant select on FuentesDeDinero to CEO1 with grant option;
+grant select on Marrones to CEO1 with grant option;
 
 conn CEO1/ceo1
 
