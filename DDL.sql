@@ -1,6 +1,6 @@
 SET ECHO ON
 
-alter session set "_ORACLE_SCRIPT"=true;
+alter system set "_ORACLE_SCRIPT"=true SCOPE=SPFILE;
 
 drop user ACME cascade;
 drop user CEO1 cascade;
@@ -37,7 +37,7 @@ grant unlimited tablespace to CEO1;
 conn CEO1/ceo1;
 
 create user ACME identified by acme;
-grant  Jefatura_Tecnica to ACME;
+grant Jefatura_Tecnica to ACME;
 
 create user JComercial identified by jc1;
 grant Jefatura_Comercial to JComercial;
