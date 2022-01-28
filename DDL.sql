@@ -21,10 +21,14 @@ grant grant any role to CEO;
 grant create user, drop user to CEO;
 
 create role Jefatura_Tecnica;
+grant create session to Jefatura_Tecnica;
+grant create table, drop table, create synonym, drop synonym, create view, drop view to Jefatura_Tecnica;
 
 create role Jefatura_Comercial;
+grant create session to Jefatura_Comercial;
 
 create role ReInEm;
+grant create session to ReInEm;
 
 create user CEO1 identified by ceo1;
 grant CEO to CEO1;
@@ -32,16 +36,8 @@ grant unlimited tablespace to CEO1;
 
 conn CEO1/ceo1;
 
-grant create session to Jefatura_Tecnica;
-grant create table, drop table, create synonym, drop synonym, create view, drop view to Jefatura_Tecnica;
-
-grant create session to Jefatura_Comercial;
-
-grant create session to ReInEm;
-
 create user ACME identified by acme;
 grant  Jefatura_Tecnica to ACME;
-grant unlimited tablespace to ACME;
 
 create user JComercial identified by jc1;
 grant Jefatura_Comercial to JComercial;
@@ -75,6 +71,7 @@ create synonym MARRONES for V_Visitas;
 grant select on SemillasPlantadas with admin option to CEO;
 grant select on Clientes with admin option to CEO;
 grant select on FuentesDeDinero with admin option to CEO;
+grant select on Marrones with admin option to CEO;
 
 conn CEO1/ceo1
 
