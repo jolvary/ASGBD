@@ -72,10 +72,10 @@ create view FuentesDeDinero as select * from CLIENTES;
 create view V_VISITAS as (select nomCli, numCli from VISITAS inner join CLIENTES on idCli = cliente where visita = 'N');
 create synonym MARRONES for V_Visitas;
 
-grant select on SemillasPlantadas with admin option to CEO;
-grant select on Clientes with admin option to CEO;
-grant select on FuentesDeDinero with admin option to CEO;
-grant select on Marrones with admin option to CEO;
+grant select on SemillasPlantadas to CEO with grant option;
+grant select on Clientes to CEO with grant option;
+grant select on FuentesDeDinero to CEO with grant option;
+grant select on Marrones to CEO with grant option;
 
 conn CEO1/ceo1
 
