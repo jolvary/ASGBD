@@ -69,7 +69,7 @@ create table VISITAS (
 
 create view SemillasPlantadas as select * from VISITAS;
 create view FuentesDeDinero as select * from CLIENTES;
-create view V_VISITAS as (select nomUsu, numCli from VISITAS inner join CLIENTES on idCli = cliente);
+create view V_VISITAS as (select nomCli, numCli from VISITAS inner join CLIENTES on idCli = cliente where visita = 'N');
 create synonym MARRONES for V_Visitas;
 
 grant select on SemillasPlantadas with admin option to CEO;
