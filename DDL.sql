@@ -22,7 +22,7 @@ grant create user, drop user to CEO;
 
 create role Jefatura_Tecnica;
 grant create session to Jefatura_Tecnica;
-grant create table, create synonym, create view to Jefatura_Tecnica;
+grant create table, create public synonym, create view to Jefatura_Tecnica;
 
 create role Jefatura_Comercial;
 grant create session to Jefatura_Comercial;
