@@ -1,6 +1,6 @@
 SET ECHO ON
 
-alter system set "_ORACLE_SCRIPT"=true SCOPE=SPFILE;
+alter session set "_ORACLE_SCRIPT"=true;
 
 drop user ACME cascade;
 drop user CEO1 cascade;
@@ -36,6 +36,8 @@ grant unlimited tablespace to CEO1;
 
 conn CEO1/ceo1;
 
+alter session set "_ORACLE_SCRIPT"=true;
+
 create user ACME identified by acme;
 grant Jefatura_Tecnica to ACME;
 
@@ -43,6 +45,8 @@ create user JComercial identified by jc1;
 grant Jefatura_Comercial to JComercial;
 
 conn ACME/acme
+
+alter session set "_ORACLE_SCRIPT"=true;
 
 create table CLIENTES (
 	idCli number,
@@ -74,6 +78,8 @@ grant select on FuentesDeDinero with admin option to CEO;
 grant select on Marrones with admin option to CEO;
 
 conn CEO1/ceo1
+
+alter session set "_ORACLE_SCRIPT"=true;
 
 create user TRA1 identified by tra1;
 grant ReInEm to TRA1;
