@@ -11,7 +11,7 @@ drop role Jefatura_Comercial;
 drop role ReInEm;
 
 create role CEO;
-grant create session;
+grant create session to CEO;
 grant grant any role to CEO;
 grant create user, drop user to CEO;
 
@@ -23,7 +23,7 @@ create role Jefatura_Comercial;
 grant create session to Jefatura_Comercial;
 
 create role ReInEm;
-grant create session;
+grant create session to ReInEm;
 
 create user ACME identified by acme;
 grant role Jefatura_Tecnica to ACME;
