@@ -26,11 +26,11 @@ create role ReInEm;
 grant create session to ReInEm;
 
 create user ACME identified by acme;
-grant role Jefatura_Tecnica to ACME;
+grant  Jefatura_Tecnica to ACME;
 grant unlimited tablespace to ACME;
 
 create user CEO1 identified by ceo1;
-grant role CEO to CEO1;
+grant CEO to CEO1;
 grant unlimited tablespace to CEO1;
 
 conn ACME/acme
@@ -64,8 +64,8 @@ grant select on FuentesDeDinero with admin option to CEO;
 conn CEO1/ceo1
 
 create user TRA1 identified by tra1;
-grant role ReInEm to TRA1;
+grant ReInEm to TRA1;
 grant select on MARRONES to TRA1;
 
 create user JComercial identified by jc1;
-grant role Jefatura_Comercial to JComercial;
+grant Jefatura_Comercial to JComercial;
