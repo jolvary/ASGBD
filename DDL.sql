@@ -14,7 +14,7 @@ drop role ReInEm;
 
 drop table VISITAS cascade;
 drop table CLIENTES cascade;
-drop public synonym MARRONES cascade;
+drop public synonym MARRONES;
 
 create role CEO;
 grant create session to CEO;
@@ -23,7 +23,6 @@ grant create user, drop user to CEO;
 
 create role Jefatura_Tecnica;
 grant create session to Jefatura_Tecnica;
-grant unlimited tablespace to Jefatura_Tecnica;
 grant create table, create public synonym, create view to Jefatura_Tecnica;
 
 create role Jefatura_Comercial;
@@ -34,7 +33,7 @@ grant create session to ReInEm;
 
 create user CEO1 identified by ceo1;
 grant CEO to CEO1;
-grant unlimited tablespace to CEO1;
+grant unlimited tablespace to CEO1 with admin option;
 
 conn CEO1/ceo1;
 
@@ -42,6 +41,7 @@ alter session set "_ORACLE_SCRIPT"=true;
 
 create user ACME identified by acme;
 grant Jefatura_Tecnica to ACME;
+grant unlimited tablespace to ACME;
 
 create user JComercial identified by jc1;
 grant Jefatura_Comercial to JComercial;
